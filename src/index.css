@@ -1,0 +1,365 @@
+/* ==========================================================================
+   Design Tokens & Foundations — Bahr Redesign (Think Company aesthetic)
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     Typography Families
+     ------------------------------------------------------------------------ */
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-arabic: 'IBM Plex Sans Arabic', 'Noto Sans Arabic', Tahoma, Arial, sans-serif;
+
+  /* ------------------------------------------------------------------------
+     Color Palette: Core Values
+     ------------------------------------------------------------------------ */
+  --color-paper: #fdffee;
+  --color-paper-alt: #f4f5e7;
+  --color-paper-muted: #e7e9d8;
+  --color-navy: #031b36;
+  --color-navy-deep: #021224;
+  --color-navy-light: #0b2c52;
+  --color-charcoal: #2d2d2d;
+  --color-muted: #5e6c7c;
+  --color-signal: #ff2c17;
+  --color-signal-hover: #e02410;
+  --color-aqua: #b6ffff;
+  --color-rose: #ffe8f8;
+  --color-prism: #ffaaf6;
+  --color-white: #ffffff;
+  --color-sea-blue: #0284c7;
+  --color-sea-blue-deep: #0369a1;
+  --color-sea-blue-light: #38bdf8;
+  --color-sea-glow: rgba(2, 132, 199, 0.28);
+
+  /* ------------------------------------------------------------------------
+     Active Theme Variables (Default: Paper)
+     ------------------------------------------------------------------------ */
+  --background: var(--color-paper);
+  --background-secondary: var(--color-paper-alt);
+  --title-color: var(--color-navy);
+  --text-color: var(--color-charcoal);
+  --text-muted: var(--color-muted);
+  --accent: var(--color-signal);
+  --accent-hover: var(--color-signal-hover);
+  --border-color: rgba(3, 27, 54, 0.12);
+  --border-subtle: rgba(3, 27, 54, 0.06);
+
+  /* Button Tokens */
+  --button-bg: var(--color-navy);
+  --button-color: var(--color-paper);
+  --button-bg-hover: var(--color-signal);
+  --button-color-hover: var(--color-paper);
+
+  /* Frosted Glass Tokens */
+  --frosted-bg: rgba(253, 255, 238, 0.7);
+  --frosted-border: rgba(3, 27, 54, 0.15);
+  --frosted-glow: rgba(255, 44, 23, 0.35);
+
+  /* ------------------------------------------------------------------------
+     Fluid Responsive Typography Scale (Clamped from 390px to 1440px+)
+     ------------------------------------------------------------------------ */
+  --text-hero: clamp(2.75rem, 1.25rem + 6.2vw, 6.25rem);
+  --text-h1: clamp(2.25rem, 1.45rem + 3.4vw, 4.5rem);
+  --text-h2: clamp(1.75rem, 1.2rem + 2.2vw, 3.125rem);
+  --text-h3: clamp(1.35rem, 1.15rem + 0.8vw, 1.875rem);
+  --text-h4: clamp(1.15rem, 1.05rem + 0.4vw, 1.375rem);
+
+  /* Editorial Serifs (Quotes, Problem Statements, Narrative Intros) */
+  --text-serif-xl: clamp(2rem, 1.15rem + 3.2vw, 3.75rem);
+  --text-serif-lg: clamp(1.5rem, 1.1rem + 1.8vw, 2.5rem);
+  --text-serif-md: clamp(1.2rem, 1rem + 0.9vw, 1.75rem);
+
+  /* Body & Meta */
+  --text-body-lg: clamp(1.125rem, 1rem + 0.3vw, 1.25rem);
+  --text-body: 1rem;
+  --text-sm: 0.875rem;
+  --text-xs: 0.75rem;
+  --text-mono: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
+
+  /* ------------------------------------------------------------------------
+     Fluid Responsive Spacing & Layout Tokens
+     ------------------------------------------------------------------------ */
+  --page-pad-x: clamp(1.25rem, 0.35rem + 3.2vw, 3.5rem);
+  --section-pad-y: clamp(4rem, 2rem + 6.5vw, 8.5rem);
+  --section-pad-y-compact: clamp(2.5rem, 1.5rem + 3.8vw, 5rem);
+
+  --gap-xs: clamp(0.5rem, 0.4rem + 0.4vw, 0.75rem);
+  --gap-sm: clamp(0.75rem, 0.5rem + 0.8vw, 1.25rem);
+  --gap-md: clamp(1.25rem, 0.8rem + 1.6vw, 2.25rem);
+  --gap-lg: clamp(2rem, 1.2rem + 3vw, 4.5rem);
+  --gap-xl: clamp(3rem, 1.8rem + 4.5vw, 6.5rem);
+
+  --container-max-w: 133rem; /* ~2128px */
+  --container-main-w: 90rem;  /* ~1440px */
+  --container-narrow-w: 64rem;
+
+  /* ------------------------------------------------------------------------
+     Motion & Transitions
+     ------------------------------------------------------------------------ */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --transition-fast: 0.2s var(--ease-out-expo);
+  --transition-normal: 0.35s var(--ease-out-expo);
+  --transition-slow: 0.65s var(--ease-out-expo);
+
+  /* ------------------------------------------------------------------------
+     Shadows & Radii
+     ------------------------------------------------------------------------ */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(3, 27, 54, 0.05);
+  --shadow-md: 0 8px 24px -4px rgba(3, 27, 54, 0.08);
+  --shadow-lg: 0 20px 48px -12px rgba(3, 27, 54, 0.14);
+}
+
+/* --------------------------------------------------------------------------
+   Thematic Color Schemes (as seen on Think Company)
+   -------------------------------------------------------------------------- */
+[data-theme="paper"] {
+  --background: var(--color-paper);
+  --title-color: var(--color-navy);
+  --text-color: var(--color-charcoal);
+  --button-bg: var(--color-navy);
+  --button-color: var(--color-paper);
+  --button-bg-hover: var(--color-signal);
+  --button-color-hover: var(--color-paper);
+  --border-color: rgba(3, 27, 54, 0.12);
+}
+
+[data-theme="midnight_navy"] {
+  --background: var(--color-navy);
+  --title-color: var(--color-paper);
+  --text-color: #cbd5e1;
+  --text-muted: #94a3b8;
+  --button-bg: var(--color-paper);
+  --button-color: var(--color-navy);
+  --button-bg-hover: var(--color-signal);
+  --button-color-hover: var(--color-paper);
+  --border-color: rgba(253, 255, 238, 0.14);
+  --border-subtle: rgba(253, 255, 238, 0.06);
+  --frosted-bg: rgba(3, 27, 54, 0.7);
+  --frosted-border: rgba(253, 255, 238, 0.2);
+}
+
+[data-theme="think_red"] {
+  --background: var(--color-signal);
+  --title-color: var(--color-paper);
+  --text-color: var(--color-paper);
+  --text-muted: rgba(253, 255, 238, 0.85);
+  --button-bg: var(--color-navy);
+  --button-color: var(--color-paper);
+  --button-bg-hover: var(--color-paper);
+  --button-color-hover: var(--color-navy);
+  --border-color: rgba(253, 255, 238, 0.25);
+}
+
+[data-theme="aqua"] {
+  --background: var(--color-aqua);
+  --title-color: var(--color-navy);
+  --text-color: var(--color-navy);
+  --text-muted: rgba(3, 27, 54, 0.75);
+  --button-bg: var(--color-navy);
+  --button-color: var(--color-white);
+  --button-bg-hover: var(--color-white);
+  --button-color-hover: var(--color-navy);
+  --border-color: rgba(3, 27, 54, 0.15);
+}
+
+[data-theme="rose"] {
+  --background: var(--color-rose);
+  --title-color: var(--color-signal);
+  --text-color: var(--color-charcoal);
+  --text-muted: rgba(45, 45, 45, 0.75);
+  --button-bg: var(--color-navy);
+  --button-color: var(--color-white);
+  --button-bg-hover: var(--color-signal);
+  --button-color-hover: var(--color-white);
+  --border-color: rgba(255, 44, 23, 0.15);
+}
+
+[data-theme="prism"] {
+  --background: var(--color-prism);
+  --title-color: var(--color-navy);
+  --text-color: var(--color-charcoal);
+  --button-bg: var(--color-navy);
+  --button-color: var(--color-paper);
+  --button-bg-hover: var(--color-paper);
+  --button-color-hover: var(--color-navy);
+  --border-color: rgba(3, 27, 54, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   Document & Base Reset (Strictly mobile first, no overflow at 390px / 1440px)
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  background-color: var(--background);
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: clip;
+}
+
+body {
+  min-height: 100svh;
+  background-color: var(--background);
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+  width: 100%;
+  position: relative;
+}
+
+#root {
+  min-height: 100svh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: clip;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   Core HTML Typography Elements
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--title-color);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-h1);
+  font-weight: 600;
+}
+
+h2 {
+  font-size: var(--text-h2);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: var(--text-h3);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+h4 {
+  font-size: var(--text-h4);
+  font-weight: 600;
+}
+
+p {
+  color: var(--text-color);
+  line-height: 1.55;
+}
+
+blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--title-color);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img, svg, video, canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* --------------------------------------------------------------------------
+   RTL & Arabic Global Typography Foundations
+   -------------------------------------------------------------------------- */
+[dir="rtl"],
+html[dir="rtl"],
+html[lang="ar"],
+html[dir="rtl"] body {
+  font-family: var(--font-arabic);
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] {
+  --font-display: var(--font-arabic);
+  --font-sans: var(--font-arabic);
+  --font-serif: var(--font-arabic);
+  --font-mono: var(--font-arabic);
+}
+
+/* Ensure Arabic cursive letter-shaping is NEVER broken by Latin letter-spacing */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] p,
+[dir="rtl"] a,
+[dir="rtl"] button,
+[dir="rtl"] span,
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] blockquote,
+[dir="rtl"] label,
+[dir="rtl"] strong,
+[dir="rtl"] em,
+[dir="rtl"] small,
+[dir="rtl"] li {
+  letter-spacing: 0 !important;
+  font-feature-settings: "liga" 1, "calt" 1;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3 {
+  line-height: 1.25;
+}
+
+[dir="rtl"] p {
+  line-height: 1.75;
+}
+
